@@ -1,6 +1,7 @@
 import time
 
 import CocoComic
+import DM99Manga
 import MH99770
 
 def save_file(output, url, engine):
@@ -27,9 +28,17 @@ def try_cococomic():
 
     engine = CocoComic.CocoComic()
     save_file(output, url, engine)
-    
+
+def try_dm99manga():
+    output = 'image_list.dm99manga.txt'
+    url = 'http://dm.99manga.com/manhua/6498/56302/?s=11'
+
+#     url = DM99Manga.test_url
+    engine = DM99Manga.DM99Manga()
+    save_file(output, url, engine)
 
 if __name__ == '__main__':
-    try_mh99770()
-    try_cococomic()
+#     try_mh99770()
+#     try_cococomic()
+    try_dm99manga()
 
