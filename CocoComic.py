@@ -5,10 +5,10 @@ import re
 import urlparse
 
 referrer_needed = True
-site_url = 'http://mh.99770.cc/'
-test_url = 'http://mh.99770.cc/manhua/352/55499/?s=4'
+site_url = 'http://www.cococomic.com/'
+test_url = 'http://www.cococomic.com/manhua/3063/51485/?s=1'
 
-class MH99770:
+class CocoComic:
     def __init__(self):
         self.serverListJS = '/v2/ii.js'
         pass
@@ -74,25 +74,13 @@ class MH99770:
             list = matchObj.group(1).split('|')
 
         return list
-            
-        
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.DEBUG)
     # Young Guns Vol.1
     url = 'http://www.cococomic.com/manhua/6066/51627/?s=11'
 
-    # Young Guns Vol.1
-    url = 'http://www.cococomic.com/manhua/6066/51627/?s=11'
-
-    urls = [
-        'http://www.cococomic.com/manhua/6066/51627/?s=11',
-        'http://www.cococomic.com/manhua/6066/51628/?s=11',
-    ]
-    # Young Guns page
-    # url = 'http://www.cococomic.com/comic/6066/'
-
-    obj = MH99770()
+    obj = CocoComic()
 #     list = obj.get(test_url)
     list = obj.get(url)
     logging.debug(list)
